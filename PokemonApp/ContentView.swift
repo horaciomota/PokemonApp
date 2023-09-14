@@ -13,11 +13,13 @@ struct ContentView: View {
     @State var SearchText: String = ""
     
     var body: some View {
-    NavigationView() {
         ScrollView {
-                LazyVStack(spacing: 1){
+                LazyVStack(spacing: 0){
+                
                     ForEach(pokemonList, id: \.id) { pokemon in
-                        PokemonDetailView(pokemon: pokemon)
+                        NavigationLink(destination: PokemonPageView(pokemon: pokemon)) {
+                            PokemonDetailView(pokemon: pokemon)
+                        }
                     }
 
                 }
@@ -25,7 +27,7 @@ struct ContentView: View {
         .navigationTitle("PokeDex")
         .searchable(text: $SearchText)
         .padding()
-        }
+        
         
         .task {
             do {
@@ -63,7 +65,11 @@ struct ContentView: View {
     
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
-            ContentView()
+            NavigationView() {
+                
+                ContentView()
+                
+            }
         }
     }
 }

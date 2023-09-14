@@ -13,11 +13,7 @@ struct PokemonDetailView: View {
     var pokemon: ContentView.PokemonModel
     
     var body: some View {
-        NavigationLink {
-            
-        } label: {
-
-            HStack (alignment: .top){
+            HStack (alignment: .top) {
             VStack(alignment: .leading) {
                 Text(pokemon.name)
                     .font(.title)
@@ -45,6 +41,6 @@ struct PokemonDetailView: View {
 
         }
             
-    }        
+
     }
 }
