@@ -13,33 +13,40 @@ struct PokemonPageView: View {
 
     
     var body: some View {
-        HStack (alignment: .top) {
-        VStack(alignment: .leading) {
-            Text(pokemon.name)
-                .font(.title)
-                .fontWeight(.medium)
-                .foregroundColor(.primary)
-                .multilineTextAlignment(.leading)
-            
-            Text(pokemon.description)
-                .font(.footnote)
-                .fontWeight(.medium)
-                .foregroundColor(.secondary)
-                .multilineTextAlignment(.leading)
-        }
         
-        AsyncImage(url: URL(string: pokemon.imageUrl)) { pokemonImage in
-            if let image = pokemonImage.image {
-                image
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 222)
+        VStack {
+            
+            AsyncImage(url: URL(string: pokemon.imageUrl)) { pokemonImage in
+                if let image = pokemonImage.image {
+                    image
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 322)
+                }
+                                
             }
-                            
-        }
-            Divider()
+            
+            HStack (alignment: .top) {
+                
+            VStack(alignment: .leading) {
+                Text(pokemon.name)
+                    .font(.title)
+                    .fontWeight(.medium)
+                    .foregroundColor(.primary)
+                    .multilineTextAlignment(.leading)
+                
+                Text(pokemon.description)
+                    .font(.footnote)
+                    .fontWeight(.medium)
+                    .foregroundColor(.secondary)
+                    .multilineTextAlignment(.leading)
+            }
+            
+        
+                Divider()
 
-        }.navigationTitle(pokemon.name)
+            }.navigationTitle ("\(pokemon.name) #\(pokemon.id)")
+        }
         
     }
 }
