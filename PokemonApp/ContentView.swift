@@ -13,13 +13,33 @@ struct ContentView: View {
     
     var body: some View {
         List(pokemonList, id: \.id) { pokemon in
-            Text(pokemon.name)
-        }
+            
+            
+            HStack {
+                VStack {
+                    Text(pokemon.name)
+                    Text(pokemon.description)
+                    
+                }
+            
+            
+            AsyncImage(url:  URL(string: pokemon.imageUrl)) { Pokemonimages in
+                if let image = Pokemonimages.image {
+                    image
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 132)
+                }
+                }
+            }
+                    
+            }
+                
         .task {
             do {
                 pokemonList = try await fetchPokemons()
             } catch {
-                print("Error \(error)")
+                print("Debug: \(error)")
             }
         }
     }
@@ -29,6 +49,8 @@ struct ContentView: View {
 struct PokemonModel: Decodable {
     let id: Int
     let name: String
+    let description: String
+    let imageUrl: String
 }
 
 func fetchPokemons() async throws -> [PokemonModel] {
@@ -41,6 +63,7 @@ func fetchPokemons() async throws -> [PokemonModel] {
     print("Fetching data...")
     
     let result = try JSONDecoder().decode([PokemonModel].self, from: data)
+    print("Allright data fetched: \(result.count)")
     return result
 }
 
