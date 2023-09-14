@@ -13,28 +13,29 @@ struct ContentView: View {
     @State var SearchText: String = ""
     
     var body: some View {
-        ScrollView {
-                LazyVStack(spacing: 0){
-                
-                    ForEach(pokemonList, id: \.id) { pokemon in
-                        NavigationLink(destination: PokemonPageView(pokemon: pokemon)) {
-                            PokemonDetailView(pokemon: pokemon)
+        NavigationView() {
+            ScrollView {
+                    LazyVStack(spacing: 0){
+                    
+                        ForEach(pokemonList, id: \.id) { pokemon in
+                                PokemonDetailView(pokemon: pokemon)
+                            
                         }
-                    }
 
+                    }
                 }
-            }
-        .navigationTitle("PokeDex")
-        .searchable(text: $SearchText)
-        .padding()
-        
-        
-        .task {
-            do {
-                pokemonList = try await fetchPokemons()
-            } catch {
-                print("Debug: \(error)")
-            }
+            .navigationTitle("PokeDexx")
+            .searchable(text: $SearchText)
+            .padding()
+            
+            
+            .task {
+                do {
+                    pokemonList = try await fetchPokemons()
+                } catch {
+                    print("Debug: \(error)")
+                }
+        }
         }
     }
 
@@ -65,11 +66,8 @@ struct ContentView: View {
     
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
-            NavigationView() {
-                
                 ContentView()
-                
-            }
+            
         }
     }
 }
