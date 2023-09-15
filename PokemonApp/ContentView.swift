@@ -46,7 +46,9 @@ struct ContentView: View {
         let name: String
         let description: String
         let imageUrl: String
+        let types: [String]
     }
+
     
     func fetchPokemons() async throws -> [PokemonModel] {
         guard let url = URL(string: "https://pokeapi.deno.dev/pokemon") else {

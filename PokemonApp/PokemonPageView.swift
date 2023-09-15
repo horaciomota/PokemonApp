@@ -10,7 +10,6 @@ import SwiftUI
 struct PokemonPageView: View {
     
     var pokemon: ContentView.PokemonModel
-
     
     var body: some View {
         
@@ -29,32 +28,43 @@ struct PokemonPageView: View {
             HStack (alignment: .top) {
                 
             VStack(alignment: .leading) {
-                Text(pokemon.name)
+                Text((formatTypes(pokemon.types)))
+                    .font(.footnote)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.secondary)
+
+                
+                Text("Description:")
                     .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(.primary)
+                    .padding(.bottom, 2 )
+                
+                Text(pokemon.description)
+                    .font(.headline)
                     .fontWeight(.medium)
                     .foregroundColor(.primary)
                     .multilineTextAlignment(.leading)
-                
-                Text(pokemon.description)
-                    .font(.footnote)
-                    .fontWeight(.medium)
-                    .foregroundColor(.secondary)
-                    .multilineTextAlignment(.leading)
+    
             }
             
         
                 Divider()
 
             }.navigationTitle ("\(pokemon.name) #\(pokemon.id)")
-        }
+        }.padding(.horizontal)
         
     }
+}
+
+func formatTypes(_ types: [String]) -> String {
+    return types.joined(separator: ", ")
 }
 
 struct PokemonPageView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView(){
-            PokemonPageView(pokemon: ContentView.PokemonModel(id: 1, name: "Bulbasaur", description: "Lorem Ipsum", imageUrl: "https://pub-460ada4f152c4135a7ec0881a2cb1330.r2.dev/2.webp"))
+            PokemonPageView(pokemon: ContentView.PokemonModel(id: 1, name: "", description: "", imageUrl: "", types: ["Grass"]))
         }
     }
 }
