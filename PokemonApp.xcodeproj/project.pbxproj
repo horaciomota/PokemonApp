@@ -11,6 +11,8 @@
 		836D26932AB370020084FD92 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836D26922AB370020084FD92 /* ContentView.swift */; };
 		836D26952AB370040084FD92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 836D26942AB370040084FD92 /* Assets.xcassets */; };
 		836D26982AB370040084FD92 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 836D26972AB370040084FD92 /* Preview Assets.xcassets */; };
+		836D269F2AB38CC90084FD92 /* PokemonDetailview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836D269E2AB38CC90084FD92 /* PokemonDetailview.swift */; };
+		836D26A12AB3960A0084FD92 /* PokemonPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836D26A02AB3960A0084FD92 /* PokemonPageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		836D26922AB370020084FD92 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		836D26942AB370040084FD92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		836D26972AB370040084FD92 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		836D269E2AB38CC90084FD92 /* PokemonDetailview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailview.swift; sourceTree = "<group>"; };
+		836D26A02AB3960A0084FD92 /* PokemonPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonPageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				836D26902AB370020084FD92 /* PokemonAppApp.swift */,
 				836D26922AB370020084FD92 /* ContentView.swift */,
+				836D269E2AB38CC90084FD92 /* PokemonDetailview.swift */,
+				836D26A02AB3960A0084FD92 /* PokemonPageView.swift */,
 				836D26942AB370040084FD92 /* Assets.xcassets */,
 				836D26962AB370040084FD92 /* Preview Content */,
 			);
@@ -138,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				836D26932AB370020084FD92 /* ContentView.swift in Sources */,
+				836D26A12AB3960A0084FD92 /* PokemonPageView.swift in Sources */,
+				836D269F2AB38CC90084FD92 /* PokemonDetailview.swift in Sources */,
 				836D26912AB370020084FD92 /* PokemonAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
