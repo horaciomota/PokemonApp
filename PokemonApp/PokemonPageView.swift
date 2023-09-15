@@ -28,6 +28,7 @@ struct PokemonPageView: View {
             HStack (alignment: .top) {
                 
             VStack(alignment: .leading) {
+                
                 Text((formatTypes(pokemon.types)))
                     .font(.footnote)
                     .fontWeight(.semibold)
@@ -45,7 +46,12 @@ struct PokemonPageView: View {
                     .fontWeight(.medium)
                     .foregroundColor(.primary)
                     .multilineTextAlignment(.leading)
-    
+                
+                Text("HP: \(pokemon.stats.HP)")
+                Text("Ataque: \(pokemon.stats.Attack)")
+                Text("Defesa: \(pokemon.stats.Defense)")
+                Text("Speed: \(pokemon.stats.Speed)")
+
             }
             
         
@@ -61,10 +67,3 @@ func formatTypes(_ types: [String]) -> String {
     return types.joined(separator: ", ")
 }
 
-struct PokemonPageView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView(){
-            PokemonPageView(pokemon: ContentView.PokemonModel(id: 1, name: "", description: "", imageUrl: "", types: ["Grass"]))
-        }
-    }
-}
