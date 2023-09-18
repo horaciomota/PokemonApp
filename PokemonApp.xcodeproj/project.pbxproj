@@ -13,6 +13,7 @@
 		836D26982AB370040084FD92 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 836D26972AB370040084FD92 /* Preview Assets.xcassets */; };
 		836D269F2AB38CC90084FD92 /* PokemonDetailview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836D269E2AB38CC90084FD92 /* PokemonDetailview.swift */; };
 		836D26A12AB3960A0084FD92 /* PokemonPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836D26A02AB3960A0084FD92 /* PokemonPageView.swift */; };
+		83ADBA2C2AB4C06100D4313D /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 83ADBA2B2AB4C06100D4313D /* SwiftUICharts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83ADBA2C2AB4C06100D4313D /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +91,9 @@
 			dependencies = (
 			);
 			name = PokemonApp;
+			packageProductDependencies = (
+				83ADBA2B2AB4C06100D4313D /* SwiftUICharts */,
+			);
 			productName = PokemonApp;
 			productReference = 836D268D2AB370020084FD92 /* PokemonApp.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +122,9 @@
 				Base,
 			);
 			mainGroup = 836D26842AB370020084FD92;
+			packageReferences = (
+				83ADBA2A2AB4C06100D4313D /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = 836D268E2AB370020084FD92 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -347,6 +355,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		83ADBA2A2AB4C06100D4313D /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		83ADBA2B2AB4C06100D4313D /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83ADBA2A2AB4C06100D4313D /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 836D26852AB370020084FD92 /* Project object */;
 }

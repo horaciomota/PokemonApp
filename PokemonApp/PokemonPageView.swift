@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftUICharts
 
 struct PokemonPageView: View {
     
@@ -47,11 +48,21 @@ struct PokemonPageView: View {
                     .foregroundColor(.primary)
                     .multilineTextAlignment(.leading)
                 
-                Text("HP: \(pokemon.stats.HP)")
-                Text("Ataque: \(pokemon.stats.Attack)")
-                Text("Defesa: \(pokemon.stats.Defense)")
-                Text("Speed: \(pokemon.stats.Speed)")
-
+                HStack {
+                                BarChartView(data: ChartData(values: [
+                                    ("HP", Double(pokemon.stats.HP)),
+                                    ("Ataque", Double(pokemon.stats.Attack)),
+                                    ("Defesa", Double(pokemon.stats.Defense)),
+                                    ("Velocidade", Double(pokemon.stats.Speed))
+                                ]), title: "s")
+                                .frame(height: 200) // Ajuste a altura conforme necessário
+                            }
+                
+//                ("HP", Double(pokemon.stats.HP)),
+//                ("Ataque", Double(pokemon.stats.Attack)),
+//                ("Defesa", Double(pokemon.stats.Defense)),
+//                ("Velocidade", Double(pokemon.stats.Speed))
+//
             }
             
         
