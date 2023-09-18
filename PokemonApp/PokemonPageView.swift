@@ -48,21 +48,38 @@ struct PokemonPageView: View {
                     .foregroundColor(.primary)
                     .multilineTextAlignment(.leading)
                 
-                HStack {
-                                BarChartView(data: ChartData(values: [
-                                    ("HP", Double(pokemon.stats.HP)),
-                                    ("Ataque", Double(pokemon.stats.Attack)),
-                                    ("Defesa", Double(pokemon.stats.Defense)),
-                                    ("Velocidade", Double(pokemon.stats.Speed))
-                                ]), title: "s")
-                                .frame(height: 200) // Ajuste a altura conforme necessário
-                            }
+                Spacer()
                 
-//                ("HP", Double(pokemon.stats.HP)),
-//                ("Ataque", Double(pokemon.stats.Attack)),
-//                ("Defesa", Double(pokemon.stats.Defense)),
-//                ("Velocidade", Double(pokemon.stats.Speed))
-//
+                HStack(spacing: 8) {
+                    Image(systemName: "heart.fill")
+                    Text("HP: \(pokemon.stats.HP)")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                    
+                    Spacer()
+                    
+                    Image(systemName: "target")
+                    Text("Attack: \(pokemon.stats.Attack)")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                }
+                .padding(.bottom, 16)
+
+                HStack(spacing: 8) {
+                    Image(systemName: "shield.fill")
+                    Text("Defense: \(pokemon.stats.Defense)")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                    
+                    Spacer()
+
+                    Image(systemName: "figure.run")
+                    Text("Speed: \(pokemon.stats.Speed)")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                }
+                Spacer()
+
             }
             
         
