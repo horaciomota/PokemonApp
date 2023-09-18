@@ -24,7 +24,7 @@ struct ContentView: View {
 
                     }
                 }
-            .navigationTitle("PokeDexx")
+            .navigationTitle("Pokedex")
             .searchable(text: $SearchText)
             .padding()
             
@@ -64,8 +64,10 @@ struct ContentView: View {
             throw URLError(.badURL)
         }
         
+        
         let (data, _) = try await URLSession.shared.data(from: url)
         print("Fetching data...")
+        
         
         let result = try JSONDecoder().decode([PokemonModel].self, from: data)
         print("Allright data fetched: \(result.count)")
